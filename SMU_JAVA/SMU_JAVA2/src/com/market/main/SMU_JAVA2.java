@@ -42,13 +42,10 @@ public class SMU_JAVA2 {
 		System.out.println("\t"+greeting);
 		System.out.println("\t"+tagline);
 		menuIntrodution();
-		System.out.print("메뉴 번호를 선택해주세요 ");
-		int n = input.nextInt();
-		System.out.println(n+"번을 선택했습니다");
-		
-		
-		
-		if (n < 1 || n > 9) {
+		try {
+			System.out.print("메뉴 번호를 선택해주세요 ");
+			int n = input.nextInt();
+			if (n < 1 || n > 9) {
 			System.out.println("1부터 9까지의 숫자를 입력하세요");
 		}
 		else {
@@ -85,6 +82,11 @@ public class SMU_JAVA2 {
 				}
 			}
 		}
+		catch(Exception e) {
+			System.out.println("올바르지 않은 메뉴 선택으로 종료합니다.");
+			quit = true;
+		}
+		
 	}
 	public static void menuIntrodution() {
 		System.out.println("*****************************************");
